@@ -55,7 +55,7 @@ let water5 = {
 
 let tamales = {
    name: "frozen tamales",
-   price: "7.00"
+   price: 9.00
 }
 
 let catFood = {
@@ -65,7 +65,12 @@ let catFood = {
 
 let chickenBreast = {
    name: "chicken breast",
-   price: "4.99"
+   price: 4.99
+}
+
+let ribeye = {
+   name: "beef ribeye",
+   price: 16.99
 }
 
 addToShoppingList(sprouts, groceries)
@@ -73,5 +78,19 @@ addToShoppingList(water5, groceries)
 addToShoppingList(tamales, groceries)
 addToShoppingList(catFood, groceries)
 addToShoppingList(chickenBreast, groceries)
+addToShoppingList(ribeye, groceries)
 
 console.log(groceries)
+
+const showHighPriced = (arr) => {
+   let expensiveFood = [];
+   for (let i = 0; i < arr.length; i++) {
+      if (arr[i].price > 8) {
+         expensiveFood.push(arr[i])
+      }
+   }
+   return expensiveFood;
+}
+
+console.log("Dayum these foods are pricey: ", showHighPriced(groceries))
+
